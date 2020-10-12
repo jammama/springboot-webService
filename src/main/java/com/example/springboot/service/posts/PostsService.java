@@ -2,13 +2,15 @@ package com.example.springboot.service.posts;
 
 import com.example.springboot.domain.posts.Posts;
 import com.example.springboot.domain.posts.PostsRepository;
+import com.example.springboot.web.dto.PostsListResponseDto;
 import com.example.springboot.web.dto.PostsResponseDto;
 import com.example.springboot.web.dto.PostsSaveRequestDto;
 import com.example.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -38,7 +40,7 @@ public class PostsService {
     }
 
     @Transactional(readOnly = true)
-    public List<PostsListRespnseDto> findAllDesc() {
+    public List<PostsListResponseDto> findAllDesc() {
         return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
     }
