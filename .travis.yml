@@ -22,27 +22,6 @@ before_deploy:
   - mkdir -p deploy
   - mv springboot-aws-webservice.zip deploy/springboot-aws-webservice
 
-deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY # Travis repo setting에 설정
-    secret_access_key: $AWS_SECRET_KEY # Travis repo setting에 설정
-    bucket: springboot-aws-webservice-build # S3버킷
-    region: ap-northeast-2
-    skip_cleanup: true
-    acl: private # zip 파일 접근
-    local_dir: deploy # before_deploy에서 생성한 디렉토리
-    wait_until_deployed: true
-
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY # repo settings 내에 설정된 값
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: springboot-aws-webservice
-    key: springboot-aws-webservice2.zip
-    bundle_type: zip
-    application: springboot-aws-webservice # 콘솔 등록 어플리케이션
-    deployment_group: springboot-aws-webservice # 콘솔 codeDeploy 배포그룹
-    region: ap-northeast-2
-    wait_until_deployed: true
 
 
 # CI 실행 완료 시 메일로 알람
