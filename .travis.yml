@@ -42,7 +42,7 @@ deploy:
     application: springboot-aws-webservice # 콘솔 등록 어플리케이션
     deployment_group: springboot-aws-webservice # 콘솔 codeDeploy 배포그룹
     region: ap-northeast-2
-#    wait_until_deployed: true
+    wait-until-deployed: true
 
 
 # CI 실행 완료 시 메일로 알람
