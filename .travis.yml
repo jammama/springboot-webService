@@ -37,7 +37,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # repo settings 내에 설정된 값
     secret_access_key: $AWS_SECRET_KEY
     bucket: springboot-aws-webservice-build # S3버킷
-    key: springboot-aws-webservice.zip
+    key: springboot-aws-webservice
     bundle_type: zip
     application: springboot-aws-webservice # 콘솔 등록 어플리케이션
     deployment_group: springboot-aws-webservice # 콘솔 codeDeploy 배포그룹
