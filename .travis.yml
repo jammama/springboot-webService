@@ -20,7 +20,7 @@ before_install:
 before_deploy:
 #  - zip -r springboot-aws-webservice *
 #  - mkdir -p deploy
-#  - mv springboot-aws-webservice.zip deploy/springboot-aws-webservice
+#  - mv springboot-aws-webservice.zip deploy/springboot-aws-webservice.zip
   - mkdir -p before-deploy
   - cp scripts/*.sh before-deploy/
   - cp appspec.yml before-deploy/
